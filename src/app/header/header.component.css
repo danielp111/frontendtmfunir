@@ -1,0 +1,157 @@
+:host {
+  display: block;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.app-header {
+  padding: 16px 24px;
+  background: #f5f6fa;
+}
+
+/* ── Card principal ── */
+.header-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  background: #ffffff;
+  border: 1px solid #e8eaf0;
+  border-radius: 16px;
+  padding: 0 28px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.07);
+  overflow: hidden;
+  position: relative;
+}
+
+/* Franja de color superior */
+.header-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #5b7fff 0%, #7c4dff 60%, #a855f7 100%);
+}
+
+/* ── Lado izquierdo ── */
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex: 1;
+  min-width: 0;
+  padding: 18px 0;
+}
+
+.logo {
+  flex-shrink: 0;
+  height: 150px;
+  width: auto;
+  object-fit: contain;
+}
+
+.divider-v {
+  flex-shrink: 0;
+  width: 1px;
+  height: 52px;
+  background: #e8eaf0;
+}
+
+.header-info {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  min-width: 0;
+}
+
+.app-title {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #1a1d2e;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+}
+
+.app-description {
+  margin: 0;
+  font-size: 0.8rem;
+  color: #8a91a8;
+  line-height: 1.5;
+}
+
+.link {
+  color: #6c47ff;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  font-weight: 500;
+}
+
+.link:hover {
+  color: #4f2fcf;
+}
+
+/* ── Lado derecho ── */
+.header-right {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+}
+
+.protected-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(108, 71, 255, 0.08);
+  color: #6c47ff;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  padding: 5px 12px;
+  border-radius: 20px;
+  border: 1px solid rgba(108, 71, 255, 0.2);
+  white-space: nowrap;
+}
+
+.country-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #8a91a8;
+  font-size: 0.72rem;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.flag {
+  font-size: 1rem;
+  line-height: 1;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .app-header {
+    padding: 20px 25px;
+  }
+
+  .header-card {
+    padding: 0 16px;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .header-right {
+    display: none;
+  }
+
+  .app-title {
+    font-size: 0.9rem;
+  }
+
+  .logo {
+    height: 70px;
+  }
+}

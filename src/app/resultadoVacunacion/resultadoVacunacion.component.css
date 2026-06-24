@@ -1,0 +1,229 @@
+.resultado-section {
+  padding: 24px;
+  background: #f5f6fa;
+  min-height: 100%;
+}
+
+.resultado-container {
+  max-width: 680px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ── Cards ── */
+.card {
+  background: #ffffff;
+  border: 1px solid #e8eaf0;
+  border-radius: 14px;
+  padding: 28px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+}
+
+.section-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #1a1d2e;
+  margin: 0;
+}
+
+.section-title svg {
+  color: #6c47ff;
+  flex-shrink: 0;
+}
+
+/* ── Paciente ── */
+.paciente-card .section-title {
+  margin-bottom: 20px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #f0f1f8;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.info-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.info-label {
+  font-size: 0.73rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #8a91a8;
+}
+
+.info-value {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #1a1d2e;
+}
+
+.genero-badge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  width: fit-content;
+}
+
+.genero-badge.femenino {
+  background: rgba(236, 72, 153, 0.1);
+  color: #db2777;
+}
+
+.genero-badge.masculino {
+  background: rgba(59, 130, 246, 0.1);
+  color: #2563eb;
+}
+
+/* ── Esquema ── */
+.esquema-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 20px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #f0f1f8;
+}
+
+.total-badge {
+  flex-shrink: 0;
+  background: rgba(108, 71, 255, 0.1);
+  color: #6c47ff;
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 20px;
+}
+
+/* ── Empty state ── */
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 32px 0 8px;
+  color: #16a34a;
+  text-align: center;
+}
+
+.empty-state p {
+  font-size: 0.875rem;
+  color: #5a5f7a;
+  max-width: 340px;
+  line-height: 1.6;
+}
+
+/* ── Recomendaciones ── */
+.recomendaciones-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.recomendacion-item {
+  display: flex;
+  gap: 16px;
+  padding: 16px;
+  border: 1px solid #e8eaf0;
+  border-radius: 12px;
+  background: #fafbff;
+  transition: border-color 0.2s;
+}
+
+.recomendacion-item:hover {
+  border-color: #c0b3ff;
+}
+
+.rec-index {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #5b7fff 0%, #7c4dff 100%);
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2px;
+}
+
+.rec-body {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+  min-width: 0;
+}
+
+.rec-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.rec-vacuna {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #1a1d2e;
+}
+
+.rec-dosis-badge {
+  background: rgba(108, 71, 255, 0.08);
+  color: #6c47ff;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 6px;
+  white-space: nowrap;
+}
+
+.rec-enfermedad {
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #8a91a8;
+}
+
+.rec-detalle {
+  font-size: 0.85rem;
+  color: #5a5f7a;
+  line-height: 1.5;
+  margin: 0;
+}
+
+@media (max-width: 480px) {
+  .resultado-section {
+    padding: 16px;
+  }
+
+  .card {
+    padding: 20px;
+  }
+
+  .info-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .esquema-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

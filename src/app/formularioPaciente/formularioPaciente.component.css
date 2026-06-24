@@ -1,0 +1,509 @@
+/* ── Layout ─────────────────────────────────────── */
+.form-section {
+  padding: 24px 10px 24px 24px;
+  background: #f5f6fa;
+  min-height: 100%;
+}
+
+.form-container {
+  max-width: 680px;
+  margin: 0 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ── Cards ──────────────────────────────────────── */
+.card {
+  background: #ffffff;
+  border: 1px solid #e8eaf0;
+  border-radius: 14px;
+  padding: 28px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+}
+
+/* ── PDF Upload ─────────────────────────────────── */
+.upload-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  border: 2px dashed #d0d4e8;
+  background: #fafbff;
+  transition: border-color 0.2s, background 0.2s;
+  cursor: default;
+  gap: 10px;
+}
+
+.upload-card.drag-over {
+  border-color: #6c47ff;
+  background: rgba(108, 71, 255, 0.04);
+}
+
+.upload-card.has-file {
+  border-style: solid;
+  border-color: #c3cfe2;
+  background: #ffffff;
+}
+
+.upload-icon-wrap {
+  width: 64px;
+  height: 64px;
+  border-radius: 16px;
+  background: rgba(108, 71, 255, 0.1);
+  color: #6c47ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 4px;
+}
+
+.upload-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #1a1d2e;
+  margin: 0;
+}
+
+.upload-hint {
+  font-size: 0.8rem;
+  color: #8a91a8;
+  margin: 0;
+}
+
+.btn-upload-file {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #6c47ff;
+  color: #fff;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  border: none;
+  transition: background 0.2s, transform 0.1s;
+  margin-top: 4px;
+}
+
+.btn-upload-file:hover {
+  background: #5635d8;
+  transform: translateY(-1px);
+}
+
+.upload-source {
+  font-size: 0.75rem;
+  color: #a0a6be;
+  margin: 0;
+}
+
+/* File selected state */
+.file-selected {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+}
+
+.file-pdf-icon {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: 10px;
+  background: rgba(234, 67, 53, 0.1);
+  color: #ea4335;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.file-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  flex: 1;
+  min-width: 0;
+  text-align: left;
+}
+
+.file-name {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #1a1d2e;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.file-size {
+  font-size: 0.75rem;
+  color: #8a91a8;
+}
+
+.btn-remove-file {
+  flex-shrink: 0;
+  background: none;
+  border: 1px solid #e0e3ef;
+  border-radius: 8px;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #8a91a8;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.btn-remove-file:hover {
+  color: #e53935;
+  border-color: #e53935;
+}
+
+/* ── Data Card ──────────────────────────────────── */
+.data-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.section-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #1a1d2e;
+  margin: 0 0 24px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #f0f1f8;
+}
+
+.section-title svg {
+  color: #6c47ff;
+}
+
+/* ── Field groups ───────────────────────────────── */
+.field-group {
+  padding: 16px 0;
+  border-bottom: 1px solid #f0f1f8;
+}
+
+.field-group.last {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.field-label {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #5a5f7a;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 10px;
+}
+
+.field-label.required::after {
+  content: ' *';
+  color: #e53935;
+}
+
+/* ── Gender selector ────────────────────────────── */
+.gender-row {
+  display: flex;
+  gap: 12px;
+}
+
+.gender-btn {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 16px 12px;
+  border: 2px solid #e8eaf0;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s;
+  color: #8a91a8;
+}
+
+.gender-btn:hover {
+  border-color: #c0b3ff;
+  background: rgba(108, 71, 255, 0.03);
+}
+
+.gender-btn.selected {
+  border-color: #6c47ff;
+  background: rgba(108, 71, 255, 0.07);
+  color: #6c47ff;
+}
+
+.gender-code {
+  font-size: 1.5rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.gender-name {
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+/* ── Toggle switch ──────────────────────────────── */
+.toggle-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.toggle-info {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  flex: 1;
+}
+
+.toggle-label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #1a1d2e;
+  line-height: 1.3;
+}
+
+.toggle-hint {
+  font-size: 0.78rem;
+  color: #8a91a8;
+}
+
+.toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 46px;
+  height: 26px;
+  flex-shrink: 0;
+}
+
+.toggle-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  inset: 0;
+  background: #d1d5db;
+  border-radius: 26px;
+  transition: background 0.25s;
+}
+
+.slider::before {
+  content: '';
+  position: absolute;
+  height: 20px;
+  width: 20px;
+  left: 3px;
+  bottom: 3px;
+  background: #ffffff;
+  border-radius: 50%;
+  transition: transform 0.25s;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+}
+
+.toggle-switch input:checked + .slider {
+  background: #6c47ff;
+}
+
+.toggle-switch input:checked + .slider::before {
+  transform: translateX(20px);
+}
+
+/* ── Weeks field ────────────────────────────────── */
+.weeks-row {
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px dashed #e8eaf0;
+}
+
+.input-with-unit {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.input-field {
+  width: 120px;
+  padding: 10px 14px;
+  border: 1.5px solid #d0d4e8;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  color: #1a1d2e;
+  outline: none;
+  transition: border-color 0.2s;
+  background: #fafbff;
+}
+
+.input-field:focus {
+  border-color: #6c47ff;
+  background: #fff;
+}
+
+.unit {
+  font-size: 0.85rem;
+  color: #8a91a8;
+  font-weight: 500;
+}
+
+/* ── Error / Success messages ───────────────────── */
+.error-msg {
+  margin-top: 6px;
+  font-size: 0.78rem;
+  color: #e53935;
+  font-weight: 500;
+}
+
+/* ── Submit button ──────────────────────────────── */
+.btn-submit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  padding: 14px 24px;
+  background: linear-gradient(135deg, #5b7fff 0%, #7c4dff 100%);
+  color: #ffffff;
+  font-size: 0.95rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.15s;
+  box-shadow: 0 4px 16px rgba(108, 71, 255, 0.35);
+  letter-spacing: 0.01em;
+}
+
+.btn-submit:hover {
+  opacity: 0.92;
+  transform: translateY(-1px);
+}
+
+.btn-submit:active {
+  transform: translateY(0);
+}
+
+/* ── Success card ───────────────────────────────── */
+.success-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 12px;
+  padding: 48px 32px;
+}
+
+.success-icon {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: rgba(34, 197, 94, 0.12);
+  color: #16a34a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 4px;
+}
+
+.success-card h2 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #1a1d2e;
+  margin: 0;
+}
+
+.success-card p {
+  font-size: 0.875rem;
+  color: #5a5f7a;
+  max-width: 380px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.btn-secondary {
+  margin-top: 8px;
+  padding: 10px 24px;
+  border: 2px solid #6c47ff;
+  color: #6c47ff;
+  background: transparent;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.btn-secondary:hover {
+  background: #6c47ff;
+  color: #fff;
+}
+
+/* ── Spinner ────────────────────────────────────── */
+.spinner {
+  width: 48px;
+  height: 48px;
+  border: 4px solid rgba(108, 71, 255, 0.15);
+  border-top-color: #6c47ff;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ── Botón nuevo análisis ────────────────────────── */
+.btn-nuevo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+/* ── Links ──────────────────────────────────────── */
+.link {
+  color: #6c47ff;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.divider {
+  height: 1px;
+  background: #f0f1f8;
+  margin-bottom: 4px;
+}
+
+/* ── Responsive ─────────────────────────────────── */
+@media (max-width: 480px) {
+  .form-section {
+    padding: 16px;
+  }
+
+  .card {
+    padding: 20px;
+  }
+
+  .gender-row {
+    gap: 8px;
+  }
+
+  .toggle-label {
+    font-size: 0.82rem;
+  }
+}
