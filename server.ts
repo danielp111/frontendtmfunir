@@ -17,6 +17,14 @@ export function app(): express.Express {
   server.set('view engine', 'html');
   server.set('views', browserDistFolder);
 
+  // Configuración en tiempo de ejecución leída de las variables de entorno del contenedor
+  server.get('/config.json', (req, res) => {
+    res.set('Cache-Control', 'no-store');
+    res.json({
+      orquestadorUrl: process.env['ORQUESTADOR_URL'] || 'http://localhost:9092'
+    });
+  });
+
   // Example Express Rest API endpoints
   // server.get('/api/**', (req, res) => { });
   // Serve static files from /browser
